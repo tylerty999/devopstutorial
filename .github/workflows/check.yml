@@ -1,0 +1,19 @@
+name: Check DevOps
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-file:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Get repository files
+        uses: actions/checkout@v4
+
+      - name: Check for Dev Ops
+        run: grep "Dev Ops" text.txt
